@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phóng To Ảnh</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+      .gallery img {
+        width: 150px;
+        cursor: pointer;
+        margin: 10px;
+        transition: transform 0.3s;
+      }
+      .gallery img:hover {
+        transform: scale(1.1);
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      .overlay img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Nhấp vào ảnh để phóng to</h2>
+    <div class="gallery">
+      <img
+        src="https://th.bing.com/th/id/OIP.nq6r6yTeNKIw5OHeU1zR3gHaEK?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        onclick="zoomImage(this)"
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.V4wA_t2z1VXgqiuTegP7CgHaEK?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        onclick="zoomImage(this)"
+      />
+      <img
+        src="https://th.bing.com/th/id/OIP.l7H8HY4cCzAb0RSv_Vu1TwHaEQ?w=310&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        onclick="zoomImage(this)"
+      />
+    </div>
+
+    <div class="overlay" onclick="closeImage()">
+      <img id="zoomedImg" />
+    </div>
+
+    <script>
+      function zoomImage(img) {
+        document.getElementById("zoomedImg").src = img.src;
+        document.querySelector(".overlay").style.display = "flex";
+      }
+      function closeImage() {
+        document.querySelector(".overlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
