@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách môn học</title>
+  </head>
+  <body>
+    <input type="text" id="subjectInput" placeholder="Nhập tên môn học" />
+    <button id="addBtn">Thêm môn học</button>
+    <ul id="subjectList"></ul>
+
+    <script>
+      let count = 0;
+      addBtn.onclick = () =>
+        subjectInput.value.trim()
+          ? // trim() loại bỏ khoảng trắng ở đầu và cuối chuỗi.
+            ((subjectList.innerHTML += `<li>${++count}. ${subjectInput.value.trim()}</li>`),
+            (subjectInput.value = ""))
+          : alert("Tên môn học không được để trống!");
+    </script>
+  </body>
+</html>

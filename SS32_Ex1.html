@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đổi màu nền</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 50px;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="changeColorBtn">Đổi màu nền</button>
+    <script>
+      document.getElementById("changeColorBtn").onclick = () =>
+        (document.body.style.backgroundColor =
+          "#" + Math.random().toString(16).slice(-6));
+      // .onclick = () => { ... }:Gán một hàm xử lý sự kiện (onclick) để khi người dùng nhấn vào nút, hàm bên trong sẽ thực thi.
+      // .toString(16):Chuyển số ngẫu nhiên thành chuỗi hệ 16 (hex)
+      // .slice(-6):Lấy 6 ký tự cuối cùng của chuỗi để tạo mã màu hex (d5a4f1).
+      // "#" + ...:Thêm dấu # vào đầu chuỗi để tạo mã màu hợp lệ, ví dụ: #d5a4f1.
+    </script>
+  </body>
+</html>

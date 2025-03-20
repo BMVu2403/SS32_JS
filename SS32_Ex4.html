@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra Email</title>
+  </head>
+  <body>
+    <input type="text" id="emailInput" placeholder="Nhập email" />
+    <button id="checkBtn">Check</button>
+    <p id="result"></p>
+
+    <script>
+      checkBtn.onclick = () => {
+        let email = emailInput.value.trim();
+        // trim() loại bỏ khoảng trắng ở đầu và cuối chuỗi.
+        let isValid =
+          email.includes("@") &&
+          (email.endsWith(".com") || email.endsWith(".vn"));
+        // endsWith(".com,.vn") kiểm tra xem email có kết thúc bằng .com,.vn không.
+
+        result.textContent = isValid ? "Email hợp lệ!" : "Email không hợp lệ!";
+        result.style.color = isValid ? "green" : "red";
+      };
+    </script>
+  </body>
+</html>
